@@ -39,7 +39,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
+  "libVersion": "2.7.3",
   "appid": "wx330e11f0e364077a",
   "projectname": "heathyEstimation",
   "debugOptions": {

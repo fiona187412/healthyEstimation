@@ -1,0 +1,8 @@
+<!--pages/homePage/homePage.wxml-->
+<view class="health-estimation-box">
+  <text class="health-estimation-text">健康评估</text>
+    <image class="health-estimation" mode="aspectFit" src="./img/健康评估.png"></image>
+</view>
+<view class="history-record-box">
+  <text>历史记录</text>
+</view>

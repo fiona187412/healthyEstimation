@@ -1,13 +1,22 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:if="{{!userInfo}}">
+      <view class="userinfo-avatar avatar-default"></view>
+      <text class="userinfo-nickname">...</text>
+    </block>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="wx-box"><image bindtap="bindWxTap" class="wx-icon" mode="aspectFit" src="./img/微信.png"></image></view>
+  <view class="manual-box">
+    <image class="checkbox" mode="aspectFit" src="{{rightSrc}}"></image>
+    <text class="manual-content">已阅读并同意</text>
+    <text class="manual">《体检健康评估用户注册协议》 </text>
   </view>
 </view>

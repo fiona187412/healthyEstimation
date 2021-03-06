@@ -4,15 +4,38 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '使用微信账号登录',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    rightSrc: './img/勾.png'
   },
-  // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  bindWxTap() {
+    wx.login({
+      success (res) {
+        console.log(res);
+        if(res.code) {
+          console.log('登录成功');
+          wx.navigateTo({
+            url: '../homePage/homePage',
+            success: function(pagedata) {
+              console.log(pagedata);
+              // 通过eventChannel向被打开页面传送数据
+              pagedata.eventChannel.emit('acceptDataFromHome', { data: res.code })
+            }
+          })
+        } else {
+          console.log('登录失败');
+          wx.showModal({
+            title: '提示',
+            content: '登录失败，请重试',
+            showCancel: false,
+          })
+        }
+      },
+      fail (res) {
+        console.log(res);
+      }
     })
   },
   onLoad() {
@@ -31,21 +54,26 @@ Page({
         })
       }
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+      wx.authorize({
+        scope: 'scope.userInfo',
+        success () {
+        wx.getUserInfo({
+          success: res => {
+            app.globalData.userInfo = res.userInfo
+            this.setData({
+              userInfo: res.userInfo,
+              hasUserInfo: true
+            })
+          }
+        })
         }
       })
     }
+
+    
   },
-  getUserInfo(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  getUserInfo() {
+    
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true

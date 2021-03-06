@@ -5,6 +5,8 @@
   align-items: center;
 }
 
+
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -12,10 +14,42 @@
   border-radius: 50%;
 }
 
+.avatar-default {
+  border: solid 1px #aaa;
+}
+
 .userinfo-nickname {
   color: #aaa;
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 50px;
+  color: #aaa;
+}
+.wx-box {
+  margin-top: 10px;
+}
+.wx-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+.manual-box {
+  display: flex;
+  justify-items: left;
+  align-items: center;
+  position: absolute;
+  bottom: 80px;
+  font-size: 12px;
+}
+.manual-content {
+  height: 15px;
+}
+.manual {
+  height: 15px;
+  color: green;
+}
+.checkbox {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
 }

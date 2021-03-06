@@ -1,0 +1,37 @@
+/* pages/homePage/homePage.wxss */
+.health-estimation-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 30px);
+  height: 280px;
+  background-color: #f5f5f5;
+  border-radius: 10%;
+  padding: 15px;
+  background-clip: content-box;
+}
+
+.health-estimation-text {
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.health-estimation {
+  width: calc(100% - 20px);
+}
+.history-record-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 30px);
+  height: 180px;
+  padding: 15px;
+  border-radius: 10%;
+  background-clip: content-box;
+  background-color: #f5f5f5;
+}
+.history-record {
+  height: 150px;
+}
