@@ -1,13 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/homePage/homePage"
+    "pages/homePage/homePage",
+    "pages/health/health",
+    "pages/history/history"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "健康评估",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,8 @@
+<!--pages/history/history.wxml-->
+<view bindtap="bindCardTap" class="card" wx:for="{{items}}" wx:key="{{items.index}}">
+  <image class="card-image" src="./img/card.png" mode="aspectFit"></image>
+  <view class="card-text-box">
+    <text class="card-title">测评时间：{{item.time}}</text>
+    <text class="card-title">测评结果：{{item.result}}</text>
+  </view>
+</view>

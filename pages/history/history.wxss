@@ -1,0 +1,28 @@
+/* pages/history/history.wxss */
+.card {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 160px;
+  border-bottom: solid 1px #eee;
+  padding: 20px;
+}
+.card:active {
+  background-color: #e8e8e8;
+}
+.card-image {
+  width: 100px;
+  margin-right: 20px;
+}
+.card-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 100%;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+}

@@ -1,8 +1,18 @@
 <!--pages/homePage/homePage.wxml-->
-<view class="health-estimation-box">
+<view class="wrap">
+  <view bindtap="bindRequestTap" class="health-estimation-box">
   <text class="health-estimation-text">健康评估</text>
     <image class="health-estimation" mode="aspectFit" src="./img/健康评估.png"></image>
+  </view>
+  <view bindtap="bindHistoryTap" class="history-record-box">
+    <text class="history-text">历史记录</text>
+    <image class="history-img" mode="aspectFit" src="./img/历史记录.png"></image>
+  </view>
 </view>
-<view class="history-record-box">
-  <text>历史记录</text>
-</view>
+  <radio-group class="tabs" bindchange="tabChange">
+    <label wx:for="{{items}}" wx:key="{{items.value}}" class="tab">
+      <radio style="display: none;" value="{{item.value}}" checked="{{item.checked}}"/>
+      <image class="tabIcon" style="{{item.style}}" src="{{item.checked ? item.lightsrc : item.src}}" mode="aspectFit"></image>
+      <text class="{{item.checked ? 'tabtext show' : 'tabtext'}}">{{item.name}}</text>
+    </label>
+  </radio-group>

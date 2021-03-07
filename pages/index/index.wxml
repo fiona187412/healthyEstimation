@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{!userInfo}}">
+    <block wx:if="{{!hasUserInfo}}">
       <view class="userinfo-avatar avatar-default"></view>
       <text class="userinfo-nickname">...</text>
     </block>

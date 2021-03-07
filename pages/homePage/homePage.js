@@ -1,13 +1,36 @@
 // pages/homePage/homePage.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    items: [
+      {value: 'home', name: '首页', checked: 'true', src: './img/首页.png', lightsrc: './img/首页 light.png'},
+      {value: 'my', name: '我的', src: './img/我的.png', lightsrc: './img/我的 light.png', style: 'width: 20px;'},
+    ],
   },
-
+  tabChange: function (e) {
+    const items = this.data.items;
+    items.forEach(item => {
+      item.checked = false;
+      if(e.detail.value === item.value) {
+        item.checked = true;
+      }
+    });
+    this.setData({
+      items
+    });
+  },
+  bindHealthTap: function () {
+    wx.navigateTo({
+      url: '../health/health',
+    })
+  },
+  bindHistoryTap: function () {
+    wx.navigateTo({
+      url: '../history/history',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
