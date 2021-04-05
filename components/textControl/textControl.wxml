@@ -1,0 +1,8 @@
+<!--components/textControl/textControl.wxml-->
+<controlWrap>
+    <mp-cells>
+        <mp-cell wx:for="{{inputs}}" wx:key="value" show-error prop="idcard" title="{{item.title}}" ext-class="">
+            <input bindinput="formInputChange"  class="weui-input" placeholder="{{item.placeholder}}"/>
+        </mp-cell>
+    </mp-cells>
+</controlWrap>

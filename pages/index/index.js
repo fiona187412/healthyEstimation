@@ -6,7 +6,7 @@ Page({
   data: {
     motto: '使用微信账号登录',
     userInfo: {},
-    hasUserInfo: false,
+    needUserInfo: true,
     rightSrc: './img/勾.png'
   },
   bindWxTap() {
@@ -47,36 +47,11 @@ Page({
         success (res){
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-            
-            self.getUserInfo();
-          }else {
-            wx.authorize({
-              scope: 'scope.userInfo',
-              success() {
-                console.log('3');
-                self.getUserInfo();
-              },
-              fail() {
-                wx.showToast({
-                  title: '获取授权失败',
-                })
-              }
-            })
+            self.setData({
+              needUserInfo: false
+            });
           }
-        }
-      })
-      
+      }
+    })
     },
-    getUserInfo() {
-      const self = this;
-      wx.getUserInfo({
-        success: (res) => {
-          console.log(res);
-          self.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
 })

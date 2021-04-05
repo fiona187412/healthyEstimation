@@ -1,19 +1,22 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{!hasUserInfo}}">
+    <block wx:if="{{needUserInfo}}">
       <view class="userinfo-avatar avatar-default"></view>
       <text class="userinfo-nickname">...</text>
     </block>
     <block wx:else>
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+      <open-data class="userinfo-nickname" type="userNickName"></open-data>
     </block>
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <view class="wx-box"><image bindtap="bindWxTap" class="wx-icon" mode="aspectFit" src="./img/微信.png"></image></view>
+  <view class="wx-box">
+    <button wx:if="{{needUserInfo}}" class="weui-btn" open-type="getUserInfo" type="primary">授权</button>
+    <image wx:else bindtap="bindWxTap" class="wx-icon" mode="aspectFit" src="./img/微信.png"></image>
+  </view>
   <view class="manual-box">
     <image class="checkbox" mode="aspectFit" src="{{rightSrc}}"></image>
     <text class="manual-content">已阅读并同意</text>

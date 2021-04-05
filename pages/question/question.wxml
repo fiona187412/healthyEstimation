@@ -1,0 +1,14 @@
+<!--pages/question/question.wxml-->
+<view class="question-container">
+    <mp-form>
+        <view class="control-wrap" wx:for="{{controls}}" wx:key="value">
+            <multiSelectControl wx:if="{{item.control === 'multi'}}" text="{{item.value}}"></multiSelectControl>
+            <textControl wx:if="{{item.control === 'text'}}" text="{{item.value}}"></textControl>
+            <selectControl wx:if="{{item.control === 'select'}}" text="{{item.value}}"></selectControl>
+            <pickerControl wx:if="{{item.control === 'picker'}}" text="{{item.value}}" title="{{item.title}}"></pickerControl>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </mp-form>
+</view>

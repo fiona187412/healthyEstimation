@@ -9,6 +9,11 @@ Page({
       {value: 'my', name: '我的', src: './img/我的.png', lightsrc: './img/我的 light.png', style: 'width: 20px;'},
     ],
   },
+  bindRequestTap: function (e) {
+    wx.navigateTo({
+      url: '../question/question',
+    })
+  },
   tabChange: function (e) {
     const items = this.data.items;
     items.forEach(item => {

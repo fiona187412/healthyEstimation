@@ -1,0 +1,4 @@
+/* pages/question/question.wxss */
+.question-container {
+    background-color: #eee;
+}

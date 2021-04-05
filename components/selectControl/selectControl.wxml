@@ -1,0 +1,10 @@
+<!--components/selectControl/selectControl.wxml-->
+<controlWrap text="{{text}}">
+    <radio-group bindchange="radioChange">
+        <mp-cells>
+            <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+                <mp-checkbox wx:for="{{selects}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{false}}"></mp-checkbox>
+            </mp-checkbox-group>
+        </mp-cells>
+    </radio-group>
+</controlWrap>

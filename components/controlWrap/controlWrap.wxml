@@ -1,0 +1,10 @@
+<!--components/controlWrap/controlWrap.wxml-->
+<view class="control-wrap">
+    <view class="control-title">
+        <image class="control-image" mode="aspectFit"></image>
+        <view class="question">{{text}}</view>
+    </view>
+    <view class="control-content">
+        <slot></slot>    
+    </view>
+</view>

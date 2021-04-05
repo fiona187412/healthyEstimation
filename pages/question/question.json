@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "multiSelectControl": "../../components/multiSelectControl/multiSelectControl",
+    "selectControl": "../../components/selectControl/selectControl",
+    "textControl": "../../components/textControl/textControl",
+    "pickerControl": "../../components/pickerControl/pickerControl",
+    "mp-form": "weui-miniprogram/form/form"
+  }
+}

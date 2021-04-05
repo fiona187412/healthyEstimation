@@ -1,0 +1,12 @@
+<!--components/pickerControl/pickerControl.wxml-->
+<controlWrap text="{{text}}">
+    <mp-cells>
+        <mp-cell prop="date" title="{{title}}">
+            <picker mode="date" value="{{date}}" start="1900-01-01" bindchange="bindDateChange">
+                <view class="weui-input">
+                    {{date}}
+                </view>
+            </picker>
+        </mp-cell>
+    </mp-cells>
+</controlWrap>

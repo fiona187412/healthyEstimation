@@ -1,0 +1,4 @@
+/* components/textControl/textControl.wxss */
+.weui-input {
+    margin-left: 40px;
+}

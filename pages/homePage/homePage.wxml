@@ -10,7 +10,7 @@
   </view>
 </view>
   <radio-group class="tabs" bindchange="tabChange">
-    <label wx:for="{{items}}" wx:key="{{items.value}}" class="tab">
+    <label wx:for="{{items}}" wx:key="value" class="tab">
       <radio style="display: none;" value="{{item.value}}" checked="{{item.checked}}"/>
       <image class="tabIcon" style="{{item.style}}" src="{{item.checked ? item.lightsrc : item.src}}" mode="aspectFit"></image>
       <text class="{{item.checked ? 'tabtext show' : 'tabtext'}}">{{item.name}}</text>
